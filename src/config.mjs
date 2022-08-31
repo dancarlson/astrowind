@@ -1,7 +1,7 @@
 export const SITE = {
-  name: "AstroWind",
+  name: "The Express Conferences",
 
-  domain: "https://astrowind.vercel.app",
+  domain: "https://boisterous-cocada-3a5d71.netlify.app/",
   baseUrl: "/",
 
   title: "AstroWind — Your website with Astro + Tailwind CSS",
