@@ -4,7 +4,7 @@ export const SITE = {
   domain: "https://boisterous-cocada-3a5d71.netlify.app/",
   baseUrl: "/",
 
-  title: "AstroWind — Your website with Astro + Tailwind CSS",
+  title: "The Express Conferences — Your website with Astro + Tailwind CSS",
   description: "🚀 AstroWind is a free and ready to start template to make your website using Astro and Tailwind CSS.",
 
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
