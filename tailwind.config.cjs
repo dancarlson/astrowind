@@ -5,7 +5,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
+        thiely: ['thiely', ...defaultTheme.fontFamily.sans],
+      },
+      backgroundImage: {
+        'xbg': "url('~/assets/images/Xbg.svg')",
+      },
+      backgroundPosition: {
+        'offset': '20%',
       },
     },
   },

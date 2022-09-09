@@ -8,10 +8,19 @@
   }
 }
 
+@font-face {
+  font-family: "thiely";
+  src: url('/fonts/thiely.woff') format('woff');
+}
+
 [astro-icon] > * {
   stroke-width: 1.5;
 }
 
 [astro-icon].icon-bold > * {
   stroke-width: 2;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: thiely;
 }

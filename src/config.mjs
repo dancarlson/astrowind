@@ -9,6 +9,14 @@ export const SITE = {
 
   googleAnalyticsId: false, // or "G-XXXXXXXXXX",
   googleSiteVerificationId: "orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M",
+
+  facebook: "https://www.facebook.com/The-Express-Conferences-102675482083607/",
+  twitter: "https://twitter.com/Xconferences",
+  linkedin: "https://www.linkedin.com/company/the-express-conferences/",
+  instagram: "https://www.instagram.com/theexpressconferences/",
+  phone: "1-866-375-5147",
+  email: "info@theexpressconferences.com",
+  address: "",
 };
 
 export const BLOG = {

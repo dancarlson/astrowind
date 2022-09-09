@@ -1,0 +1,59 @@
+---
+import { Icon } from "astro-icon";
+import { SITE } from "~/config.mjs";
+
+const { } = Astro.props;
+---
+<ul class="flex items-center gap-1 mb-6 md:order-1 md:gap-2 md:mb-0">
+  <li>
+    <a class="flex justify-center items-center text-gray-600 hover:text-gray-700 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out dark:bg-gray-800 dark:text-gray-400 p-1.5"
+      aria-label="Phone" href=`tel:${SITE.phone}`>
+      <Icon name="tabler:phone" class="w-5 h-5" />
+      <span class="hidden md:inline-block md:ml-2">{SITE.phone}</span>
+    </a>
+  </li>
+  <li>
+    <a class="flex items-center items-center text-gray-600 hover:text-gray-700 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out dark:bg-gray-800 dark:text-gray-400 p-1.5"
+      aria-label="Email" href={SITE.email}>
+      <Icon name="tabler:mail" class="w-5 h-5" /> 
+      <span class="hidden lg:inline-block lg:ml-2">{SITE.email}</span>
+    </a>
+  </li>
+  <li>
+    <a class="flex justify-center items-center text-gray-600 hover:text-gray-700 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out dark:bg-gray-800 dark:text-gray-400 p-1.5"
+      aria-label="Twitter" href={SITE.twitter}>
+      <Icon name="tabler:brand-twitter" class="w-5 h-5" />
+    </a>
+  </li>
+  <li>
+    <a class="flex justify-center items-center text-gray-600 hover:text-gray-700 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out dark:bg-gray-800 dark:text-gray-400 p-1.5"
+      aria-label="Instagram" href={SITE.instagram}>
+      <Icon name="tabler:brand-instagram" class="w-5 h-5" />
+    </a>
+  </li>
+  <li>
+    <a class="flex justify-center items-center text-gray-600 hover:text-gray-700 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out dark:bg-gray-800 dark:text-gray-400 p-1.5"
+      aria-label="Facebook" href={SITE.facebook}>
+      <Icon name="tabler:brand-facebook" class="w-5 h-5" />
+    </a>
+  </li>
+  <li>
+    <a class="flex justify-center items-center text-gray-600 hover:text-gray-700 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out dark:bg-gray-800 dark:text-gray-400 p-1.5"
+      aria-label="Linkedin" href={SITE.linkedin}>
+      <Icon name="tabler:brand-linkedin" class="w-5 h-5" />
+    </a>
+  </li>
+  <!-- <li>
+    <a class="flex justify-center items-center text-gray-600 hover:text-gray-700 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out dark:bg-gray-800 dark:text-gray-400 p-1.5"
+      aria-label="RSS" href="/rss.xml">
+      <Icon name="tabler:rss" class="w-5 h-5" />
+    </a>
+  </li> -->
+  <li>
+    <button type="button"
+      class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+      aria-label="Toggle between Dark and Light mode" data-aw-toggle-color-scheme>
+      <Icon name="tabler:sun" class="w-6 h-6" />
+    </button>
+  </li>
+</ul>
