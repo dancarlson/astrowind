@@ -23,7 +23,25 @@ export const BLOG = {
   disabled: false,
   slug: "blog",
 
-  postsWithoutBlogSlug: true,
+  postsWithoutBlogSlug: false,
+  postsPerPage: 6,
+
+  category: {
+    disabled: false,
+    slug: "category", // set empty to change from /category/some-slug to /some-slug
+  },
+
+  tag: {
+    disabled: false,
+    slug: "tag",
+  },
+};
+
+export const CONF = {
+  disabled: false,
+  slug: "conference",
+
+  postsWithoutConfSlug: false,
   postsPerPage: 6,
 
   category: {

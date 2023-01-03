@@ -1,0 +1,15 @@
+---
+import ConfListItem from "~/components/widgets/ConfListItem.astro";
+
+const { page } = Astro.props;
+---
+
+<ul>
+  {
+  page.data.map((post) => (
+  <li class="mb-10 md:mb-16">
+    <ConfListItem post={post} />
+  </li>
+  ))
+  }
+</ul>

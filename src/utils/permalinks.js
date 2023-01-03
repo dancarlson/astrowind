@@ -1,5 +1,5 @@
 import slugify from 'slugify'
-import { SITE, BLOG } from "~/config.mjs";
+import { SITE, BLOG, CONF } from "~/config.mjs";
 
 const trim = (str, ch) => {
   let start = 0, end = str.length;
@@ -16,6 +16,7 @@ const createPath = (...params) =>  "/" + params.filter((el) => !!el).join("/")
 const baseUrl = trimSlash(SITE.baseUrl);
 
 export const BLOG_BASE = slugify(trimSlash(BLOG.slug), { lower: true });
+export const CONF_BASE = slugify(trimSlash(CONF.slug), { lower: true });
 export const CATEGORY_BASE = slugify(trim(BLOG?.category?.slug), { lower: true });
 export const TAG_BASE = slugify(trim(BLOG?.tag?.slug), { lower: true });
 
@@ -36,6 +37,9 @@ export const getPermalink = (slug = "", type = "page") => {
     case "post":
       return createPath(baseUrl, BLOG.postsWithoutBlogSlug ? "" : BLOG_BASE, _slug);
 
+    case "conference":
+      return createPath(baseUrl, CONF.postsWithoutConfSlug ? "" : CONF_BASE, _slug);
+
     case "page":
     default:
       return createPath(baseUrl, _slug);
@@ -43,6 +47,7 @@ export const getPermalink = (slug = "", type = "page") => {
 };
 
 export const getBlogPermalink = () => getPermalink(BLOG_BASE);
+export const getConfPermalink = () => getPermalink(CONF_BASE);
 export const getHomePermalink = () => {
   const permalink = getPermalink();
   return permalink !== "/" ? permalink + "/" : permalink;

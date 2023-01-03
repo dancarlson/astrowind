@@ -1,0 +1,75 @@
+---
+import Picture from "~/components/core/Picture.astro";
+import { getFormattedDate } from "~/utils/getFormatedDate";
+import X from "~/components/widgets/X.astro";
+
+const { post } = Astro.props;
+---
+<section class="py-8 sm:py-16 lg:py-20 mx-auto">
+  <article>
+    <header class="">
+      <!-- <p class="max-w-3xl mx-auto text-center">
+        <time datetime={post.pubDate}>{getFormattedDate(post.pubDate)}</time> ~ {Math.ceil(post.readingTime)} min read
+      </p>
+      <h1
+        class="px-4 sm:px-6 max-w-3xl mx-auto text-center text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-8">
+        {post.title}
+      </h1> -->
+      {
+      post.label && post.logo && (
+        <div
+        class="px-4 sm:px-6 max-w-3xl mx-auto flex items-center justify-center">
+        <h1 class=" text-xl md:text-7xl ">{post.label}|</h1>
+        <X class="h-7xl" theme={post.logo} />
+        <!-- <Picture src={image} class="absolute inset-0 w-full h-full object-cover mb-6 rounded shadow-lg" widths={[400,
+          768]} sizes="(max-width: 767px) 400px, 768px" alt={post.description} aspectRatio={1} /> -->
+        </div>
+        <h1
+        class="px-4 sm:px-6 max-w-3xl mx-auto text-center text-mn md:text-xl font-bold leading-tighter tracking-tighter mb-8">
+        {post.title}
+      </h1>
+      )}
+    </header>
+
+    <div class="container mx-auto">
+      <div class="flex flex-row flex-wrap py-4">
+        <aside class="w-full sm:w-1/3 md:w-1/4 px-2">
+          <div class="sticky top-32 p-4 w-full">
+            <div class="alert shadow-lg bg-blue-900">
+              <div class="flex gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                </svg>
+                
+                <div>
+                  <h3 class="font-bold">New message!</h3>
+                  <div class="text-xs">You have 1 unread message</div>
+                </div>
+              </div>
+              <div class="flex-none">
+                <button class="btn btn-sm">See</button>
+              </div>
+            </div>
+            <!-- navigation -->
+            <ul class="flex flex-col overflow-hidden">
+              ...ujdsiajdkf la;sjdfl a;sjdfl ajfs;l jsl; djafd ajfl jdfj;sald j;l
+            </ul>
+          </div>
+        </aside>
+        <main role="main" class="w-full sm:w-2/3 md:w-3/4 pt-1 px-2">
+          {
+            post.image && (
+              <Picture src={post.image}
+              class="max-w-full lg:max-w-6xl mx-auto mt-4 mb-6 sm:rounded-md bg-gray-400 dark:bg-slate-700" widths={[400,
+              900]} sizes="(max-width: 900px) 400px, 900px" alt={post.description} aspectRatio="16:9" />
+            )
+          }
+          <div
+            class="container mx-auto px-8 sm:px-6 max-w-3xl prose prose-lg lg:prose-xl dark:prose-invert dark:prose-headings:text-slate-300 prose-md prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-md prose-img:shadow-lg mt-8">
+            <Fragment set:html={post.body} />
+          </div>
+        </main>
+      </div>
+    </div>
+  </article>
+</section>

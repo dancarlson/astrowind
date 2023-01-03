@@ -1,0 +1,32 @@
+---
+import { SITE, CONF } from "~/config.mjs";
+import { getCanonical, getPermalink } from "~/utils/permalinks";
+import { fetchConferences } from "~/utils/fetchConferences";
+import { findImage } from "~/utils/findImage";
+import Layout from "~/layouts/PageLayout.astro";
+import ConfPost from "~/components/widgets/ConfPost.astro";
+
+export async function getStaticPaths() {
+  if (CONF?.disabled) return [];
+
+  const conferences = await fetchConferences();
+
+  return conferences.map((conf) => ({
+    params: { slug: conf.slug, conf: CONF.postsWithoutConfSlug ? undefined : CONF?.slug || undefined },
+    props: { conf },
+  }));
+}
+
+const { conf } = Astro.props;
+
+const meta = {
+  title: `${conf.title} — ${SITE.name}`,
+  description: conf.description,
+  canonical: conf.canonical || getCanonical(getPermalink(conf.slug, "conference")),
+  image: await findImage(conf.image),
+}
+---
+
+<Layout meta={meta}>
+  <ConfPost post={{ ...conf, image: meta.image }} />
+</Layout>

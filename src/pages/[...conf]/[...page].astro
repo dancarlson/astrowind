@@ -1,0 +1,39 @@
+---
+import { SITE, CONF } from "~/config.mjs";
+import { fetchConferences } from "~/utils/fetchConferences";
+import Layout from "~/layouts/ConfLayout.astro";
+import ConfList from "~/components/widgets/ConfList.astro";
+import Pagination from "~/components/widgets/Pagination.astro";
+import { getCanonical, getPermalink, CONF_BASE } from "~/utils/permalinks";
+
+
+export async function getStaticPaths({ paginate }) {
+  if (CONF?.disabled) return [];
+
+  const conferences = await fetchConferences();
+
+  return paginate(conferences, {
+    params: { conf: CONF_BASE || undefined },
+    pageSize: CONF.postsPerPage
+  });
+}
+
+const { page } = Astro.props;
+const currentPage = page.currentPage ?? 1;
+
+const meta = {
+  title: `Conf ${currentPage > 1 ? `— Page ${currentPage} ` : ""}— ${SITE.name}`,
+  description: SITE.description,
+  canonical: getCanonical(getPermalink(page.url.current))
+}
+---
+
+<Layout meta={meta}>
+  <Fragment slot="title">
+    Conferences!!
+    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-500">AstroWind
+    </span>
+  </Fragment>
+  <ConfList page={page} />
+  <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+</Layout>

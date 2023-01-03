@@ -1,7 +1,7 @@
 import getReadingTime from "reading-time";
 
-export const getNormalizedPost = async (post) => {
-  const { frontmatter, compiledContent, rawContent, file } = post;
+export const getNormalizedConf = async (conf) => {
+  const { frontmatter, compiledContent, rawContent, file } = conf;
 
   return {
     pubDate: frontmatter.pubDate,
@@ -15,19 +15,18 @@ export const getNormalizedPost = async (post) => {
     body: compiledContent(),
     image: frontmatter.image,
 
-    label: frontmatter.label,
-    logo: frontmatter.logo,
-
-    startDate: frontmatter.startDate,
-    endDate: frontmatter.endDate,
-    displayDate: frontmatter.displayDate,
-    location: frontmatter.location,
-    address: frontmatter.address,
-
     excerpt: frontmatter.excerpt,
     authors: frontmatter.authors,
     category: frontmatter.category,
     tags: frontmatter.tags,
+
+    conference: frontmatter.conf,
+    label: frontmatter.title,
+    logo: frontmatter.image,
+    startDate: frontmatter.startDate,
+    endDate: frontmatter.endDate,
+    displayDate: frontmatter.displayDate,
+
     readingTime: Math.ceil(getReadingTime(rawContent()).minutes),
   };
 };
