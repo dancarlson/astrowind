@@ -1,5 +1,6 @@
 ---
 import Picture from "~/components/core/Picture.astro";
+import { Image } from '@astrojs/image/components';
 import { getFormattedDate } from "~/utils/getFormatedDate";
 import X from "~/components/widgets/X.astro";
 
@@ -30,12 +31,78 @@ const { post } = Astro.props;
       </h1>
       )}
     </header>
-
+{ console.log(post) }
     <div class="container mx-auto">
       <div class="flex flex-row flex-wrap py-4">
-        <aside class="w-full sm:w-1/3 md:w-1/4 px-2">
-          <div class="sticky top-32 p-4 w-full">
-            <div class="alert shadow-lg bg-blue-900">
+        <aside class="lg:sticky top-32 p-4 w-full sm:w-1/3 md:w-1/4 px-2 flex flex-col gap-4">
+            {
+              post.displayDate && (
+                <div class="bg-white md:bg-white/90 dark:bg-slate-900 dark:md:bg-sky-900/80 p-3 rounded-xl">
+                  <div class="flex gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                    </svg>
+                    
+                    <div>
+                      <h3 class="font-bold">Date</h3>
+                      <div class="">{ post.displayDate }</div>
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+            {
+              post.price && (
+                <div class="bg-white md:bg-white/90 dark:bg-slate-900 dark:md:bg-sky-900/80 p-3 rounded-xl">
+                  <div class="flex gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                    </svg>
+                    
+                    <div>
+                      <h3 class="font-bold">Cost</h3>
+                      <div class="">{ post.displayPrice }</div>
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+            {
+              post.location && (
+                <div class="bg-white md:bg-white/90 dark:bg-slate-900 dark:md:bg-sky-900/80 p-3 rounded-xl">
+                  <Image src={post.locationLogo} class="shadow-lg" width={768} alt={post.locationLogo} aspectRatio={1} />
+                  <div class="flex gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                    </svg>
+                    <div>
+                      <h3 class="font-bold">Location</h3>
+                      <div class="">{ post.location }</div>
+                      <div class="">{ post.address }</div>
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+            {
+              post.host && (
+                <div class="bg-white md:bg-white/90 dark:bg-slate-900 dark:md:bg-sky-900/80 p-3 rounded-xl">
+                  <Image src={post.hostLogo} class="shadow-lg" width={768} alt={post.host} aspectRatio={1} /> 
+                  <div class="flex gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                    </svg>
+                    
+                    <div>
+                      <h3 class="font-bold">Organizer</h3>
+                      <div class="">{ post.host }</div>
+                      <div class="">{ post.hostUrl }</div>
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+            <!-- <div class="bg-white md:bg-white/90 dark:bg-slate-900 dark:md:bg-sky-900/80 p-3 rounded-xl">
               <div class="flex gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
@@ -49,12 +116,12 @@ const { post } = Astro.props;
               <div class="flex-none">
                 <button class="btn btn-sm">See</button>
               </div>
-            </div>
+            </div> -->
             <!-- navigation -->
             <ul class="flex flex-col overflow-hidden">
               ...ujdsiajdkf la;sjdfl a;sjdfl ajfs;l jsl; djafd ajfl jdfj;sald j;l
             </ul>
-          </div>
+         
         </aside>
         <main role="main" class="w-full sm:w-2/3 md:w-3/4 pt-1 px-2">
           {

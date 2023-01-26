@@ -1,15 +1,23 @@
 ---
-pubDate: "Aug 08 2022"
 title: "Corporate Express <150K SQFT 2023"
+pubDate: "Aug 08 2022"
 conference: "Corporate Express"
 label: "CORPORATE"
 logo: "cor"
 startDate: "01-16-2023"
 endDate: "01-20-2023"
 displayDate: "Jan 16-20"
+price: 3995
+currency: "USD"
+displayPrice: "$3,995 for Attendees ($0 for Hosted Buyer/Event Organizer)" 
+locationLogo: "~/assets/conf/corp-23/westin-hotels-resorts.png"
+locationUrl: https://www.marriott.com/hotels/travel/tuswi-the-westin-la-paloma-resort-and-spa/
 location: "Westin La Paloma Resort & Spa"
 address: "3800 E Sunrise Dr, Tucson, AZ 85718"
 description: "Be a part of this first time Corporate based conference for meetings that need between 100k-250k sq. ft. of meeting space"
+host: Visit Tucson
+hostUrl: "https://www.visittucson.org/"
+hostLogo: "~/assets/conf/corp-23/visit_tucson_logo.png"
 image: "~/assets/images/hero.jpg"
 category: "Tutorials"
 tags: [astro, tailwind css, front-end]

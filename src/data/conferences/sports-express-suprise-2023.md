@@ -12,6 +12,14 @@ address: ""
 description: "All attendees will be spending one night in our launch location. The next day everyone will be taken somewhere else either by boat, train, bus or plane for the next 4 days! We will not reveal the location of our final destination to the latest point possible."
 image: "~/assets/images/hero.jpg"
 category: "Tutorials"
+price: 3995
+currency: "USD"
+displayPrice: "$3,995 for Attendees ($0 for Hosted Buyer/Event Organizer)" 
+locationLogo: "~/assets/conf/corp-23/westin-hotels-resorts.png"
+locationUrl: https://www.marriott.com/hotels/travel/tuswi-the-westin-la-paloma-resort-and-spa/
+host: Visit Tucson
+hostUrl: "https://www.visittucson.org/"
+hostLogo: "~/assets/conf/corp-23/visit_tucson_logo.png"
 tags: [astro, tailwind css, front-end]
 ---
 

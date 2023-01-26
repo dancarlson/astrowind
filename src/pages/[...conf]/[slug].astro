@@ -24,9 +24,11 @@ const meta = {
   description: conf.description,
   canonical: conf.canonical || getCanonical(getPermalink(conf.slug, "conference")),
   image: await findImage(conf.image),
+  hostLogo: await findImage(conf.hostLogo),
+  locationLogo: await findImage(conf.locationLogo),
 }
 ---
 
 <Layout meta={meta}>
-  <ConfPost post={{ ...conf, image: meta.image }} />
+  <ConfPost post={{ ...conf, image: meta.image, hostLogo: meta.hostLogo, locationLogo: meta.locationLogo }} />
 </Layout>

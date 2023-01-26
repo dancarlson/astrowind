@@ -21,8 +21,19 @@ export const getNormalizedPost = async (post) => {
     startDate: frontmatter.startDate,
     endDate: frontmatter.endDate,
     displayDate: frontmatter.displayDate,
+    
+    locationLogo: frontmatter.locationLogo,
+    locationUrl: frontmatter.locationUrl,
     location: frontmatter.location,
     address: frontmatter.address,
+
+    host: frontmatter.host,
+    hostUrl: frontmatter.hostUrl,
+    hostLogo: frontmatter.hostLogo,
+
+    price: frontmatter.price,
+    currency: frontmatter.currency,
+    displayPrice: frontmatter.displayPrice,
 
     excerpt: frontmatter.excerpt,
     authors: frontmatter.authors,

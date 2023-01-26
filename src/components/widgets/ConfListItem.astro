@@ -8,6 +8,8 @@ import X from "~/components/widgets/X.astro";
 const { post } = Astro.props;
 
 const image = await findImage(post.image);
+const locationLogo = await findImage(post.locationLogo);
+const hostLogo = await findImage(post.hostLogo);
 ---
 
 <article class="max-w-md mx-auto md:max-w-none grid md:grid-cols-2 gap-6 md:gap-8">
