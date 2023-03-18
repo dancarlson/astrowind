@@ -11,7 +11,10 @@ const load = async function () {
   });
 
   const results = (await Promise.all(normalizedPosts))
-    .sort((a, b) => new Date(b.startDate).valueOf() - new Date(a.startDate).valueOf())
+    .sort(
+      (a, b) =>
+        new Date(b.startDate).valueOf() - new Date(a.startDate).valueOf()
+    )
     .reverse()
     .filter((post) => !post.draft);
   return results;

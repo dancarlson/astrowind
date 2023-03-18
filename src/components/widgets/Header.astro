@@ -17,12 +17,14 @@ const { } = Astro.props;
       </a>
       <div class="flex items-center md:hidden">
   
-        <a href=`tel:${SITE.phone}`><button type="button" 
+        <a href=`tel:${SITE.phone}`>
+          <button type="button" 
           class="flex justify-center items-center text-gray-700 hover:text-gray-700 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out dark:bg-gray-800 dark:text-gray-400 p-1.5"
           aria-label="Phone">
-          <Icon name="tabler:phone" class="w-5 h-5" />
-          <span class="hidden md:inline-block md:ml-2">{SITE.phone}</span>
-        </button></a>
+            <Icon name="tabler:phone" class="w-5 h-5" />
+            <span class="hidden md:inline-block md:ml-2">{SITE.phone}</span>
+          </button>
+        </a>
 
         <a href=`mailto:${SITE.email}`><button type="button" 
           class="flex items-center items-center text-gray-700 hover:text-gray-700 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out dark:bg-gray-800 dark:text-gray-400 p-1.5"
@@ -48,7 +50,7 @@ const { } = Astro.props;
       <nav class="items-center w-full md:w-auto hidden md:flex text-gray-600 dark:text-slate-200 h-screen md:h-auto"
         aria-label="Main navigation" id="menu">
         <ul
-          class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center collapse w-full md:w-auto collapsed text-xl md:text-base">
+          class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto collapsed text-xl md:text-base">
           <li>
             <a class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
               href="#">Pages
