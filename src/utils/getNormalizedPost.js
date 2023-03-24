@@ -35,6 +35,9 @@ export const getNormalizedPost = async (post) => {
     currency: frontmatter.currency,
     displayPrice: frontmatter.displayPrice,
 
+    register: frontmatter.register,
+    regLabel: frontmatter.regLabel,
+    
     excerpt: frontmatter.excerpt,
     authors: frontmatter.authors,
     category: frontmatter.category,

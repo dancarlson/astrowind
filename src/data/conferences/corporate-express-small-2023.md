@@ -10,7 +10,7 @@ displayDate: "Jan 16-20"
 price: 3995
 currency: "USD"
 displayPrice: "$3,995 for Attendees ($0 for Hosted Buyer/Event Organizer)" 
-locationLogo: "~/assets/conf/corp-23/westin-hotels-resorts.png"
+zlocationLogo: "~/assets/conf/corp-23/westin-hotels-resorts.png"
 locationUrl: https://www.marriott.com/hotels/travel/tuswi-the-westin-la-paloma-resort-and-spa/
 location: "Westin La Paloma Resort & Spa"
 address: "3800 E Sunrise Dr, Tucson, AZ 85718"
