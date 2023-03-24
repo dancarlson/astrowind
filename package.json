@@ -13,16 +13,17 @@
     "@astrojs/image": "^0.3.3",
     "@astrojs/rss": "^1.0.0",
     "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "^3.0.0",
+    "@astrojs/tailwind": "^3.1.1",
     "@julian_cataldo/astro-analytics": "^0.11.5",
     "@tailwindcss/typography": "^0.5.4",
-    "astro": "^2.0.2",
+    "astro": "^2.1.7",
     "astro-icon": "^0.7.3",
     "reading-time": "^1.5.0",
     "slugify": "^1.6.5",
     "subfont": "^6.9.0"
   },
   "dependencies": {
-    "@astrojs/markdoc": "^0.0.2"
+    "@astrojs/markdoc": "^0.0.2",
+    "sharp": "^0.31.3"
   }
 }
