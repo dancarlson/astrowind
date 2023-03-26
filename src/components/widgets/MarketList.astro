@@ -1,0 +1,17 @@
+---
+import { fetchMarkets } from "~/utils/fetchMarkets";
+import MarketTitle from "./MarketTitle.astro";
+
+const items = (await Promise.all((await fetchMarkets())));
+//   .map(async (item) =>
+//   ({ ...item}
+//   ))));
+---
+
+<div class="flex flex-col w-max gap-1">
+{
+    items.map((post) => (
+        <MarketTitle post={post} h={2}/>
+    ))
+}
+</div>

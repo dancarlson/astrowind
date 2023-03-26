@@ -1,0 +1,15 @@
+---
+import X from "./X.astro";
+
+const { post, h } = Astro.props;
+---
+<a class="relative block group" href={'#'}>
+    <div
+      class="flex items-center h-8 justify-end">
+      {h == 1 && <h1 class="leading-10 text-3xl ">{post.label}|</h1>}
+      {h == 2 && <h2 class="leading-10 text-3xl ">{post.label}|</h2>}
+      <div class="h-full">
+        <X class theme={post.logo} />
+        </div> 
+    </div>
+</a>
